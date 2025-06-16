@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - imprime "Programming is like building a multilingual puzzle"
- * suivi d'une nouvelle ligne.
- * Return: 0 en cas de succès.
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
