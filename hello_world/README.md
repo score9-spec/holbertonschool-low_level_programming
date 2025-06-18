@@ -1,26 +1,23 @@
-# 0x00. C - Hello, World
+# Projet Holberton - Hello World
 
-## Description
-Ce projet fait partie du cursus de programmation en C. Il couvre les bases de la compilation, les fonctions d'affichage et l'introduction aux outils de développement en C.
+Ce projet contient divers scripts et programmes en C pour apprendre à utiliser le préprocesseur, le compilateur, et d'autres concepts fondamentaux en programmation.
 
-## Environnement
-- **OS** : Ubuntu 20.04 LTS
-- **Compilateur** : gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
-- **Style** : Betty style
+## Contenu
 
-## Fichiers du projet
+- `0-preprocessor`: Script pour afficher la date et l'heure de compilation.
+- `1-compiler`: Script qui compile le fichier C.
+- `100-intel`: Script pour générer des fichiers assembleur.
+- `101-quote.c`: Programme qui imprime une citation.
+- `2-assembler`: Script qui assemble le code source C.
+- `3-names`: Script pour manipuler les noms.
+- `4-puts.c`: Programme qui imprime une chaîne à l'aide de la fonction `puts`.
+- `5-printf.c`: Programme de test d'impression à l'aide de la fonction `printf`.
+- `6-taille.c`: Code corrigé pour afficher la taille des types de données.
+- `main.c`: Point d'entrée principal pour tester les fonctions.
 
-| Fichier | Description |
-|---------|-------------|
-| `0-preprocessor` | Script qui exécute un fichier C via le préprocesseur et sauvegarde le résultat |
-| `1-compiler` | Script qui compile un fichier C sans le linker |
-| `2-assembler` | Script qui génère le code assembleur d'un fichier C |
-| `3-name` | Script qui compile un fichier C et crée un exécutable nommé `cisfun` |
-| `4-puts.c` | Programme C qui affiche une chaîne de caractères avec la fonction `puts` |
+## Configuration
 
-## Compilation
+Pour compiler les programmes, utilisez la commande suivante :
 
-### Compilation standard :
 ```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 fichier.c -o programme
-
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <nom_du_fichier>.c -o <nom_du_programme>
