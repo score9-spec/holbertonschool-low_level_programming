@@ -11,12 +11,13 @@ int main(void)
 unsigned long int a = 1;
 unsigned long int b = 2;
 unsigned long int sum = 0;
+unsigned long int next;
 
 while (b <= 4000000)
 {
 if (b % 2 == 0)
 sum += b;
-unsigned long int next = a + b;
+next = a + b;
 a = b;
 b = next;
 }
@@ -25,4 +26,3 @@ printf("%lu\n", sum);
 
 return (0);
 }
-
