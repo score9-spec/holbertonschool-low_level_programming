@@ -7,20 +7,24 @@
 */
 int main(void)
 {
-unsigned long int a = 1;
-unsigned long int b = 2;
+unsigned long int aLow = 1, aHigh = 0;
+unsigned long int bLow = 2, bHigh = 0;
+unsigned long int nextLow, nextHigh;
 int i;
 
-printf("%lu, %lu, ", a, b);
+printf("%lu, %lu, ", aLow, bLow);
 
-for (i= 2; i < 98; i++)
+for (i = 2; i < 98; i++)
 {
-unsigned long int next = a + b;
-printf("%lu", next);
+nextLow = aLow + bLow;
+nextHigh = aHigh + bHigh + (nextLow < aLow);
+printf("%lu", nextHigh * 1000000000 + nextLow);
 if (i != 97)
 printf(", ");
-a = b;
-b = next;
+aLow = bLow;
+aHigh = bHigh;
+bLow = nextLow;
+bHigh = nextHigh;
 }
 
 printf("\n");
