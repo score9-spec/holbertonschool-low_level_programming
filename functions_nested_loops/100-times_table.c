@@ -1,51 +1,35 @@
 #include "main.h"
-
+void format_print(int prod, int first);
 /**
-* print_times_table - prints the n times table, starting with 0
-* @n: the size of the times table to print
+* format_print - formats and prints number with spacing
+* @prod: product to print
+* @first: 1 if first in row, 0 otherwise
 */
-void print_times_table(int n)
+void format_print(int prod, int first)
 {
-int i, j, product;
-
-if (n < 0 || n > 15)
-return;
-
-for (i = 0; i <= n; i++)
-{
-for (j = 0; j <= n; j++)
-{
-product = i * j;
-
-if (j == 0)
-{
-_putchar('0' + product);
-}
+if (first)
+_putchar('0' + prod);
 else
 {
 _putchar(',');
 _putchar(' ');
-
-if (product < 10)
+if (prod < 10)
 {
 _putchar(' ');
 _putchar(' ');
-_putchar('0' + product);
+_putchar('0' + prod);
 }
-else if (product < 100)
+else if (prod < 100)
 {
 _putchar(' ');
-_putchar('0' + (product / 10));
-_putchar('0' + (product % 10));
+_putchar('0' + (prod / 10));
+_putchar('0' + (prod % 10));
 }
 else
 {
-_putchar('0' + (product / 100));
-_putchar('0' + ((product / 10) % 10));
-_putchar('0' + (product % 10));
+_putchar('0' + (prod / 100));
+_putchar('0' + ((prod / 10) % 10));
+_putchar('0' + (prod % 10));
 }
-}
-}
-_putchar('\n');
 }
 }
