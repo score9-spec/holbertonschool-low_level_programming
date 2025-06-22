@@ -1,40 +1,75 @@
 #include <stdio.h>
-
+#define MAXDIGITS 1000
 /**
- * main - Prints the first 98 Fibonacci numbers.
+* add - adds the numbers of two given arrays of integer
+* @a: an arrays containing differents digit of a number
+* @b: an array containing different digit of a number
+* @result: the returned value
 *
-* Description: Prints the first 98 Fibonacci numbers, starting with 1 and 2.
-* Numbers are separated by a comma followed by a space.
+* Return: void
+*/
+void add(int a[], int b[], int result[])
+{
+int carry = 0;
+int i;
+for (i = 0; i < MAXDIGITS; i++)
+{
+int sum = a[i] + b[i] + carry;
+result[i] = sum % 10;
+carry = sum / 10;
+}
+}
+/**
+* printNumber - print the given number
+* @number: a given array of numbers to be printed
 *
-* Return: Always 0 (Success)
+* Return: void
+*/
+void printNumber(int number[])
+{
+int i = MAXDIGITS - 1;
+while (i >= 0 && number[i] == 0)
+{
+i--;
+}
+if (i == -1)
+{
+printf("0");
+}
+else
+{
+for (; i >= 0; i--)
+{
+printf("%d", number[i]);
+}
+}
+}
+/**
+* main - prints the first 98 fibonnachi numbers
+*
+* Return: always zero
 */
 int main(void)
 {
-unsigned long int fib1_low = 1;
-unsigned long int fib2_low = 2;
-unsigned long int fib1_high = 0;
-unsigned long int fib2_high = 0;
+int a[MAXDIGITS] = {0};
+int b[MAXDIGITS] = {1};
+int c[MAXDIGITS] = {0};
 int i;
-
-printf("%lu, %lu, ", fib1_low, fib2_low);
-
-for (i = 2; i < 98; i++)
+for (i = 1; i < 98; i++)
 {
-unsigned long int next_low = fib1_low + fib2_low;
-unsigned long int next_high = fib1_high + fib2_high + (next_low < fib1_low);
-
-fib1_low = fib2_low;
-fib2_low = next_low;
-fib1_high = fib2_high;
-fib2_high = next_high;
-
-if (fib2_high == 0)
-printf("%lu, ", fib2_low);
-else
-printf("%lu%010lu, ", fib2_high, fib2_low);
+int j;
+add(a, b, c);
+printNumber(c);
+printf(", ");
+/* Update a and b for the next iteration */
+for (j = 0; j < MAXDIGITS; j++)
+{
+a[j] = b[j];
+b[j] = c[j];
 }
-
+}
+add(a, b, c);
+printNumber(c);
 printf("\n");
-
 return (0);
 }
