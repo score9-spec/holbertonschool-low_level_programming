@@ -1,57 +1,40 @@
 #include <stdio.h>
 
 /**
-* print_fibonacci - Prints the first 98 Fibonacci numbers.
+ * main - Prints the first 98 Fibonacci numbers.
 *
 * Description: Prints the first 98 Fibonacci numbers, starting with 1 and 2.
-* The numbers are separated by a comma followed by a space.
-*/
-void print_fibonacci(void)
-{
-unsigned int fib1_low = 1;
-unsigned int fib2_low = 2;
-unsigned int fib1_high = 0;
-unsigned int fib2_high = 0;
-unsigned int next_fib_low;
-unsigned int next_fib_high;
-int i;
-
-printf("%u, %u, ", fib1_low, fib2_low);
-
-for (i = 2; i < 98; i++)
-{
-next_fib_low = fib1_low + fib2_low;
-next_fib_high = fib1_high + fib2_high + (next_fib_low < fib1_low);
-
-if (i != 97)
-{
-if (next_fib_high == 0)
-printf("%u, ", next_fib_low);
-else
-printf("%u%09u, ", next_fib_high, next_fib_low);
-}
-else
-{
-if (next_fib_high == 0)
-printf("%u\n", next_fib_low);
-else
-printf("%u%09u\n", next_fib_high, next_fib_low);
-}
-
-fib1_low = fib2_low;
-fib1_high = fib2_high;
-fib2_low = next_fib_low;
-fib2_high = next_fib_high;
-}
-}
-
-/**
-* main - Entry point of the program.
+* Numbers are separated by a comma followed by a space.
 *
-* Return: Always 0.
+* Return: Always 0 (Success)
 */
 int main(void)
 {
-print_fibonacci();
+unsigned long int fib1_low = 1;
+unsigned long int fib2_low = 2;
+unsigned long int fib1_high = 0;
+unsigned long int fib2_high = 0;
+int i;
+
+printf("%lu, %lu, ", fib1_low, fib2_low);
+
+for (i = 2; i < 98; i++)
+{
+unsigned long int next_low = fib1_low + fib2_low;
+unsigned long int next_high = fib1_high + fib2_high + (next_low < fib1_low);
+
+fib1_low = fib2_low;
+fib2_low = next_low;
+fib1_high = fib2_high;
+fib2_high = next_high;
+
+if (fib2_high == 0)
+printf("%lu, ", fib2_low);
+else
+printf("%lu%010lu, ", fib2_high, fib2_low);
+}
+
+printf("\n");
+
 return (0);
 }
