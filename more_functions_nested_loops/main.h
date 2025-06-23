@@ -77,4 +77,10 @@ void print_square(int size);
  */
 void print_triangle(int size);
 
+/**
+ * print_number - imprime un entier
+ * @n: l'entier à imprimer
+ */
+void print_number(int n);
+
 #endif /* MAIN_H */
