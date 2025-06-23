@@ -42,4 +42,11 @@ void print_most_numbers(void);
 */
 void more_numbers(void);
 
+/**
+ * print_line - prints a straight line in the terminal
+ * @n: number of times the character _ should be printed
+ * Return: void
+ */
+void print_line(int n);
+
 #endif /* MAIN_H */
