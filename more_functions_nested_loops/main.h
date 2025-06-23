@@ -49,4 +49,11 @@ void more_numbers(void);
  */
 void print_line(int n);
 
+/**
+ * print_numbers - prints numbers from 0 to 9
+ *
+ * Return: void
+ */
+void print_numbers(void);
+
 #endif /* MAIN_H */
