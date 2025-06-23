@@ -2,16 +2,16 @@
 #define MAIN_H
 
 /**
-* _isupper - vérifie si un caractère est en majuscule
-* @c: le caractère à vérifier
-* Return: 1 si c est en majuscule, 0 sinon
+* _isupper - checks if character is uppercase
+* @c: character to check
+* Return: 1 if c is uppercase, 0 otherwise
 */
 int _isupper(int c);
 
 /**
-* _putchar - écrit un caractère sur la sortie standard
-* @c: le caractère à écrire
-* Return: le caractère écrit
+* _putchar - writes a character to stdout
+* @c: character to write
+* Return: character written
 */
 int _putchar(char c);
 
@@ -36,4 +36,10 @@ int mul(int a, int b);
 */
 void print_most_numbers(void);
 
-#endif  /* MAIN_H */
+/**
+* more_numbers - prints 10 times the numbers from 0 to 14
+* Return: void
+*/
+void more_numbers(void);
+
+#endif /* MAIN_H */
