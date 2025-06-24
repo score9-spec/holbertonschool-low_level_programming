@@ -93,4 +93,12 @@ void print_array(int *a, int n);
  */
 char *_strcpy(char *dest, char *src);
 
+/**
+ * _atoi - converts a string to an integer
+ * @s: the string to convert
+ *
+ * Return: the integer converted from the string
+ */
+int _atoi(char *s);
+
 #endif /* MAIN_H */
