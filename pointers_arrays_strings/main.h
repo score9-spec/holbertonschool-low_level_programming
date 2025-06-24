@@ -51,4 +51,12 @@ void print_rev(char *s);
  */
 int _putchar(char c);
 
+/**
+ * rev_string - inverse une chaîne de caractères
+ * @s: la chaîne de caractères à inverser
+ *
+ * Return: void
+ */
+void rev_string(char *s);
+
 #endif /* MAIN_H */
