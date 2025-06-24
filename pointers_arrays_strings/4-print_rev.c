@@ -20,8 +20,8 @@ ptr++;
 ptr = s;
 
 /* ItÃrer sur la longeur de la chaine en sens inverse et imprimer
-* chaque caractere.
-*/
+* chaque caractere. */
+
 for (length -= 1; length >= 0; length--)
 {
 _putchar(*(ptr + length));
