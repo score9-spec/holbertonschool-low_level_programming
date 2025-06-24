@@ -19,8 +19,10 @@ ptr++;
 /* RÃintialiser ptr au dÃbut de la chaine pour un accÃs facile */
 ptr = s;
 
-/* ItÃrer sur la longeur de la chaine en sens inverse et imprimer
-* chaque caractere. */
+/*
+* ItÃrer sur la longeur de la chaine en sens inverse et imprimer
+* chaque caractere.
+*/
 
 for (length -= 1; length >= 0; length--)
 {
