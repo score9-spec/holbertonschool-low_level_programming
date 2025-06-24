@@ -59,4 +59,12 @@ int _putchar(char c);
  */
 void rev_string(char *s);
 
+/**
+ * puts2 - prints every other character of a string, starting with the first character
+ * @str: the string to be printed
+ *
+ * Return: void
+ */
+void puts2(char *str);
+
 #endif /* MAIN_H */
