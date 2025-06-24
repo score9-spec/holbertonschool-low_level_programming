@@ -1,39 +1,40 @@
 #include "main.h"
 
 /**
-* _atoi - converts a string to an integer
-* @s: the string to convert
+* _atoi - convert a string to an integer
+* @s: the input string
 *
-* Return: the integer converted from the string
+* Description:  
+*   - Skip all characters until the first digit is found,
+*     keeping track of each preceding '-' to determine sign.
+*   - Once a digit is found, convert all consecutive digits
+*     into an integer value.
+*   - If no digits are ever found, return 0.
+*   - Does not use long, does not declare arrays, no magic numbers.
+*
+* Return: the integer value represented by the string
 */
 int _atoi(char *s)
 {
+int i = 0;
 int sign = 1;
 int result = 0;
-int i = 0;
 
-while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
-i++;
-
-while (s[i] == '-' || s[i] == '+')
+/* 1) skip non-digit chars, flip sign on each '-' */
+while (s[i] && (s[i] < '0' || s[i] > '9'))
 {
 if (s[i] == '-')
-sign *= -1;
+sign = -sign;
+/* ignore '+' */
 i++;
 }
 
+/* 2) accumulate digits */
 while (s[i] >= '0' && s[i] <= '9')
 {
-if (result > (2147483647 - (s[i] - '0')) / 10)
-{
-if (sign == 1)
-return (2147483647);
-else
-return (-2147483648);
-}
 result = result * 10 + (s[i] - '0');
 i++;
 }
 
-return (result *sign);
+return (result * sign);
 }
