@@ -101,4 +101,13 @@ char *_strcpy(char *dest, char *src);
  */
 int _atoi(char *s);
 
+/**
+ * _strcat - Concatenate two strings.
+ * @dest: The destination string.
+ * @src: The source string to be concatenated.
+ *
+ * Return: A pointer to the resulting string dest.
+ */
+char *_strcat(char *dest, char *src);
+
 #endif /* MAIN_H */
