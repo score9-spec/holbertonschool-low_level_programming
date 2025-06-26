@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
 * _strncpy - Copies a string up to n bytes from src to dest.
@@ -10,31 +11,19 @@
 */
 char *_strncpy(char *dest, const char *src, int n)
 {
-int i;
+size_t i; /* Change ici pour utiliser size_t */
 
-for (i = 0; i < n; i++)
+for (i = 0; i < (size_t)n; i++)
 {
-if (src[i] != '\0')
+if (i < strlen(src)) /* Vérifie que l'indice est valide pour src */
 {
-dest[i] = src[i];
+dest[i] = src[i]; /* Copie caractère src dans dest */
 }
 else
 {
-/* Si src se termine, remplis le reste avec des chaînes null*/
-while (i < n) 
-{
-dest[i] = '\0';
-i++;
-}
-break;
+dest[i] = '\0'; /* Remplis le reste de dest avec des null */
 }
 }
 
-/* Si src a moins de n caractères, assure que dest est null-terminé*/
-if (i == n)
-{
-dest[n - 1] = '\0'; /* Assurer la terminaison correcte */
-}
-    
-return dest;
+return dest; /* Retourne le pointeur vers dest */
 }
