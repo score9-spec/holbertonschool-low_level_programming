@@ -128,6 +128,6 @@ char *_strncat(char *dest, char *src, int n);
  *
  * Return: Un pointeur vers la chaîne de destination.
  */
-char *_strncpy(char *dest, char *src, int n);
+char *_strncpy(char *dest, const char *src, int n);
 
 #endif /* MAIN_H */

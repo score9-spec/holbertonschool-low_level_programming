@@ -1,29 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
-* _strncat - function that concatenates two strings
-* @dest: destination string
-* @src: source string
-* @n: number of bytes to append
+* _strncpy - Copies a string up to n bytes from src to dest.
+* @dest: The destination buffer where the string is copied.
+* @src: The source string to copy.
+* @n: The maximum number of bytes to copy from src.
 *
-* Return: pointer to dest
+* Return: A pointer to the destination string (dest).
 */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, const char *src, int n)
 {
-int i, j;
+int i;
 
-/* Find the end of dest */
-for (i = 0; dest[i] != '\0'; i++)
-        ;
-
-/* Append up to n characters from src */
-for (j = 0; j < n && src[j] != '\0'; j++)
+for (i = 0; i < n; i++)
 {
-dest[i + j] = src[j];
+if (src[i] != '\0')
+{
+dest[i] = src[i];
 }
-dest[i + j] = '\0'; /* Null terminate the resulting string */
+else
+{
+/* Si src se termine, remplis le reste avec des chaînes null*/
+while (i < n) 
+{
+dest[i] = '\0';
+i++;
+}
+break;
+}
+}
 
+/* Si src a moins de n caractères, assure que dest est null-terminé*/
+if (i == n)
+{
+dest[n - 1] = '\0'; /* Assurer la terminaison correcte */
+}
+    
 return dest;
 }
