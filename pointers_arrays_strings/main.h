@@ -120,4 +120,14 @@ char *_strcat(char *dest, char *src);
  */
 char *_strncat(char *dest, char *src, int n);
 
+/**
+ * _strncpy - Copie une chaîne de caractères.
+ * @dest: La chaîne de destination.
+ * @src: La chaîne source.
+ * @n: Le nombre de caractères à copier.
+ *
+ * Return: Un pointeur vers la chaîne de destination.
+ */
+char *_strncpy(char *dest, char *src, int n);
+
 #endif /* MAIN_H */
