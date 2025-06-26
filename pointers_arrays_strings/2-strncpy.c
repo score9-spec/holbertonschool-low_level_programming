@@ -1,36 +1,29 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
-* _strncat - Concat√ne deux chaines de caracteres 
-* en limitant le nombre de caracteres de src
-* @dest: la chaine de caract√res de destination
-* @src: La chainde de caractere source 
-* @n: Le nombre maximum de caracteres a copier de src
+* _strncat - function that concatenates two strings
+* @dest: destination string
+* @src: source string
+* @n: number of bytes to append
 *
-* Return: Un pointeur vers la chaine de caracteres 
-* r√sultante dest
+* Return: pointer to dest
 */
 char *_strncat(char *dest, char *src, int n)
 {
-int i = 0;
-int j = 0;
+int i, j;
 
-/* Trouver la fin de la chaine de caract√res dest */
-while (dest[i] != '\0')
+/* Find the end of dest */
+for (i = 0; dest[i] != '\0'; i++)
+        ;
+
+/* Append up to n characters from src */
+for (j = 0; j < n && src[j] != '\0'; j++)
 {
-i++;
+dest[i + j] = src[j];
 }
+dest[i + j] = '\0'; /* Null terminate the resulting string */
 
-/* Copier les caracteres de src dans dest */
-while (j < n && src[j] != '\0')
-{
-dest[i] = src[j];
-i++;
-j++;
-}
-
-/* Ajouter le caractere de fin de chaine */
-dest[i] = '\0';
-
-return (dest);
+return dest;
 }
