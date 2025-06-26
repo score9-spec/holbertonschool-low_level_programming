@@ -110,4 +110,14 @@ int _atoi(char *s);
  */
 char *_strcat(char *dest, char *src);
 
+/**
+ * _strncat - Concatène deux chaînes de caractères en limitant le nombre de caractères à copier de la deuxième chaîne.
+ * @dest: La chaîne de caractères à destination.
+ * @src: La chaîne de caractères à concaténer.
+ * @n: Le nombre maximum de caractères à copier de src.
+ *
+ * Return: Un pointeur vers la chaîne résultante dest.
+ */
+char *_strncat(char *dest, char *src, int n);
+
 #endif /* MAIN_H */
